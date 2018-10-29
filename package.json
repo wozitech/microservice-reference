@@ -1,0 +1,48 @@
+{
+  "name": "medopad",
+  "version": "1.0.0",
+  "description": "Tech Test for medopad",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wozitech/medopad.git"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js --mode production",
+    "dev": "cross-env NODE_ENV=development webpack --config webpack.config.js --watch --mode development",
+    "lint": "eslint --ext .js ./medopad-test ./test",
+    "start": "webpack-dev-server --hot --inline --mode development --port 3000",
+    "test": "jest",
+    "package:development": "npm build && cd lib && sls package -v --stage development",
+    "package:staging": "npm build && cd lib && sls package -v --stage staging",
+    "package:production": "npm build && cd lib && sls package -v --stage production",
+    "deploy:development": "npm build && cd lib && sls deploy -v --stage development",
+    "deploy:staging": "npm build && cd lib && sls deploy -v --stage staging",
+    "deploy:production": "npm build && cd lib && sls deploy -v --stage production"
+  },
+  "author": "Warren Ayling",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "copy-webpack-plugin": "^4.5.4",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.8.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.26.2",
+    "eslint-plugin-wyze": "^3.4.0",
+    "jest": "^23.6.0",
+    "serverless": "^1.32.0",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  }
+}
