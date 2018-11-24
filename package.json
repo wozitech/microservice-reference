@@ -1,16 +1,16 @@
 {
-  "name": "medopad",
+  "name": "wozitech-microservice-reference",
   "version": "1.0.0",
-  "description": "Tech Test for medopad",
-  "main": "index.js",
+  "description": "A reference repo for microservices development",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wozitech/medopad.git"
+    "url": "git+https://github.com/wozitech/microservice-reference.git"
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js --mode production",
     "dev": "cross-env NODE_ENV=development webpack --config webpack.config.js --watch --mode development",
-    "lint": "eslint --ext .js ./medopad-test ./test",
+    "lint": "eslint --ext .js ./src ./test",
     "start": "webpack-dev-server --hot --inline --mode development --port 3000",
     "test": "jest",
     "package:development": "npm build && cd lib && sls package -v --stage development",

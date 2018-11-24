@@ -1,4 +1,4 @@
-import { handler } from '../medopad-test/hello';
+import { handler } from '../src/hello';
 
 describe('The hello handler', () => {
     afterEach(() => {

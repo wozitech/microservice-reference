@@ -8,7 +8,7 @@ const hello = async () => {
             {
                 param1: "hello"
             },
-            { invokedFunctionArn : 'arn:aws:lambda:eu-west-2:924132851837:function:medopad-test-development-hello' },
+            { invokedFunctionArn : 'arn:aws:lambda:eu-west-2:accountid:function:microservices-reference-development-hello' },
             (err, data) => {
                 if (err) console.error(err);
                 console.log("LOCAL: My results: ", data);
