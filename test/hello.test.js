@@ -1,4 +1,4 @@
-import { handler } from '../src/hello';
+import { handler } from '../src/api/hello';
 
 describe('The hello handler', () => {
     afterEach(() => {
