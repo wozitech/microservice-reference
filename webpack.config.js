@@ -6,7 +6,7 @@ if (process.env.NODE_ENV === 'production') externals.push('aws-sdk');
 
  const lambdaFunctions = {
   entry: {
-    hello: ['babel-polyfill', './src/api/hello.js']
+    hello: ['@babel/polyfill', './src/api/hello.js']
   },
   output: {
     path: path.resolve(__dirname, './lib'),
@@ -24,11 +24,13 @@ if (process.env.NODE_ENV === 'production') externals.push('aws-sdk');
     extensions: ['.js']
   },
   plugins: [
-    new CopyWebpackPlugin([
-    {
-      from: path.resolve(__dirname, './serverless.yml'),
-      to: path.resolve(__dirname, './lib')
-    }])
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, './serverless.yml'),
+          to: path.resolve(__dirname, './lib')
+        }],
+      }),
   ],
   target: 'node',
   node: {
